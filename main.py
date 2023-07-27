@@ -28,9 +28,9 @@ def main():
     temp_df['temp_index'] = range(len(temp_df))
     dfRadical=lookup_and_copy_values(dfMain=temp_df,dfMainColumn='radical',dfSub=dfbothu,dfSubColumn='radical')
     
-    st.success("Radical to learn")
     # st.write(*listDecomposition)
     if len(dfRadical)>0:
+        st.success(f"Radical to learn: {len(dfRadical)}")
         with st.expander("Start to learn"):
             dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
             dfRadical=dfRadical.dropna()
