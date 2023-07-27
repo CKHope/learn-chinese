@@ -30,12 +30,13 @@ def main():
     
     st.success("Radical to learn")
     # st.write(*listDecomposition)
-    with st.expander("Start to learn"):
-        dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
-        dfRadical=dfRadical.dropna()
-        dfRadical=dfRadical.reset_index()
-        dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
-        st.dataframe(dfRadical)
+    if len(dfRadical)>0:
+        with st.expander("Start to learn"):
+            dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
+            dfRadical=dfRadical.dropna()
+            dfRadical=dfRadical.reset_index()
+            dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
+            st.dataframe(dfRadical)
         
     with st.expander("See full database"):
         dfDecomposition
