@@ -32,10 +32,10 @@ def main():
     if len(dfRadical)>0:
         st.success(f"Radical to learn: {len(dfRadical)}")
         with st.expander("Start to learn"):
-            dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
+            dfRadical=dfRadical[['radical_y','name','pinyin','meaning','stroke']]
             dfRadical=dfRadical.dropna()
             dfRadical=dfRadical.reset_index()
-            dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
+            dfRadical=dfRadical[['radical_y','name','pinyin','meaning','stroke']]
             st.dataframe(dfRadical)
     if len(dfDecomposition)>0:  
         with st.expander("See full database"):
