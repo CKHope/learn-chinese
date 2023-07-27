@@ -37,9 +37,9 @@ def main():
             dfRadical=dfRadical.reset_index()
             dfRadical=dfRadical[['radical_y','name','pinyin','meaning']]
             st.dataframe(dfRadical)
-        
-    with st.expander("See full database"):
-        dfDecomposition
+    if len(dfDecomposition)>0:  
+        with st.expander("See full database"):
+            dfDecomposition
 
 if __name__ == "__main__":
     main()
